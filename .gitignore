@@ -1,0 +1,6 @@
+*.iml
+*.DS_Store
+*.class
+*.idea
+/Users/kuldeeppatidar/JDBC Practise/SpringJDBC/target
+/Users/kuldeeppatidar/JDBC Practise/SpringJDBC/src/test
