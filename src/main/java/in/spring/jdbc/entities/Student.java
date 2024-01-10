@@ -14,6 +14,10 @@ public class Student {
     public Student() {
     }
 
+    public Student(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }

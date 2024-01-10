@@ -46,8 +46,13 @@ public class App
 //        System.out.println("# of record inserted = " + result);
 
         // update student
-        int res = studentDao.update(student);
-        System.out.println("# of record updated = " + res);
+//        int res = studentDao.update(student);
+//        System.out.println("# of record updated = " + res);
 
+        // delete student
+        int deleted = studentDao.delete(student);
+        System.out.println("# of record deleted = " + deleted );
+
+        // select student
     }
 }
