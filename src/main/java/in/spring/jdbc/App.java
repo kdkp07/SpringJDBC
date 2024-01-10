@@ -34,10 +34,10 @@ public class App
         // Design based approach
         ApplicationContext context = new AnnotationConfigApplicationContext(springConfig.class);
 
-        Student student = new Student();
-        student.setId(201);
-        student.setName("Aakash Bitta");
-        student.setCity("Indore");
+//        Student student = new Student();
+//        student.setId(201);
+//        student.setName("Aakash Bitta");
+//        student.setCity("Indore");
 
         StudentDao studentDao = context.getBean("stdDao",StudentDao.class);
 
@@ -50,9 +50,11 @@ public class App
 //        System.out.println("# of record updated = " + res);
 
         // delete student
-        int deleted = studentDao.delete(student);
-        System.out.println("# of record deleted = " + deleted );
+//        int deleted = studentDao.delete(student);
+//        System.out.println("# of record deleted = " + deleted );
 
         // select student
+        Student student = studentDao.getStudent(232);
+        System.out.println(student);
     }
 }
