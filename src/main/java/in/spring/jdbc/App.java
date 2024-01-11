@@ -2,6 +2,9 @@ package in.spring.jdbc;
 
 import in.spring.jdbc.dao.StudentDao;
 import in.spring.jdbc.dao.StudentDaoImpl;
+
+import java.util.Arrays;
+import java.util.List;
 import in.spring.jdbc.entities.Student;
 import in.spring.jdbc.resources.springConfig;
 import org.springframework.context.ApplicationContext;
@@ -35,9 +38,9 @@ public class App
         ApplicationContext context = new AnnotationConfigApplicationContext(springConfig.class);
 
 //        Student student = new Student();
-//        student.setId(201);
-//        student.setName("Aakash Bitta");
-//        student.setCity("Indore");
+//        student.setId(157);
+//        student.setName("Sanket");
+//        student.setCity("Kalaburgi");
 
         StudentDao studentDao = context.getBean("stdDao",StudentDao.class);
 
@@ -54,7 +57,14 @@ public class App
 //        System.out.println("# of record deleted = " + deleted );
 
         // select student
-        Student student = studentDao.getStudent(232);
-        System.out.println(student);
+//        Student student = studentDao.getStudent(159);
+//        System.out.println(student);
+
+        // selecting multiple students or rows from the database;
+        List<Student> students  = studentDao.getAllStudent();
+        for(Student it  : students){
+            System.out.println(it);
+        }
+
     }
 }
