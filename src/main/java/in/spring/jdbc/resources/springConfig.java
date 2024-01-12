@@ -3,11 +3,13 @@ package in.spring.jdbc.resources;
 import in.spring.jdbc.dao.StudentDao;
 import in.spring.jdbc.dao.StudentDaoImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
+@ComponentScan(basePackages = {"in.spring.jdbc.dao"})
 public class springConfig {
 
     // i will write beans here
@@ -27,13 +29,6 @@ public class springConfig {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(createDs());
         return jdbcTemplate;
-    }
-
-    @Bean("stdDao")
-    public StudentDao createStdDao(){
-        StudentDaoImpl studentDao = new StudentDaoImpl();
-        studentDao.setJdbcTemplate(createTemplate());
-        return studentDao;
     }
 
 }
